@@ -1,0 +1,38 @@
+{% extends 'temp/home_public.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <center>
+    <h2 class="cycle_taital">Cycles</h2>
+        <table border="1" class="table table-striped">
+            <tr style="background-color: #274d5a;color: #FFFFFF">
+                <th>model</th>
+                <th>type</th>
+                <th>size</th>
+                <th>rent amount / km</th>
+                <th>shop</th>
+                <th>location</th>
+                <th>image</th>
+            </tr>
+            {% for i in b %}
+            <tr>
+                <td>{{ i.model }}</td>
+                <td>{{ i.type }}</td>
+                <td>{{ i.size }}</td>
+                <td>{{ i.rent_amount }}</td>
+                <td>{{ i.render.shop_name }}</td>
+                <td>{{ i.render.location }}</td>
+                <td><img src="/static/{{ i.image }}" width="100" height="100"></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'temp/home_shop.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <center>
+    <h2 class="cycle_taital">Distance travelled</h2>
+        <table border="1" class="table table-striped">
+            <tr style="background-color: #274d5a;color: #FFFFFF">
+                <th>booking id</th>
+                <th>start point</th>
+                <th>end point</th>
+                <th>distance</th>
+                <th></th>
+            </tr>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.booking_id }}</td>
+                <td>{{ i.start_point }}</td>
+                <td>{{ i.end_point }}</td>
+                <td>{{ i.distance }}</td>
+                <td><button class="btn"><a href="/rent_amount/add_rent_amount/{{ i.distance_tracking_id }}">Add rent amount</a></button> </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'temp/home_shop.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cycle</title>
+</head>
+<body>
+    <center>
+        <h2 class="cycle_taital">Cycle</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table style="height: 200px;width: 400px">
+                <tr>
+                    <td>Model</td>
+                    <td><input type="text" name="model" id="" required></td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td><input type="text" name="type" required></td>
+                </tr>
+                <tr>
+                    <td>Size</td>
+                    <td><input type="text" name="size" required></td>
+                </tr>
+                <tr>
+                    <td>amount/km</td>
+                    <td><input type="number" name="amount" required></td>
+                </tr>
+                <tr>
+                    <td>image</td>
+                    <td><input type="file" name="image" required></td>
+                </tr>
+            </table>
+            <button class="btn">Send</button>
+        </form>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'temp/home_shop.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <center>
+    <h2 class="cycle_taital">Bookings</h2>
+        <table border="1" class="table table-striped ">
+            <tr style="background-color: #274d5a;color: #FFFFFF">
+                <th>booking id</th>
+                <th>user</th>
+                <th>Cycle</th>
+                <th>date</th>
+                <th>time</th>
+                <th>status</th>
+                <th></th>
+            </tr>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.booking_id }}</td>
+                <td>{{ i.user.name }}</td>
+                <td>{{ i.cycle.model }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.time }}</td>
+                <td>{{ i.status }}</td>
+                <td>
+                     <button class="btn" style="background-color: #274d5a;color: #FFFFFF"><a href="/booking/accept/{{ i.booking_id }}">Approve</a></button>
+
+                    <button class="btn"><a href="/booking/reject/{{ i.booking_id }}">Reject</a></button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

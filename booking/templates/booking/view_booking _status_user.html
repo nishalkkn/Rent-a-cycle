@@ -1,0 +1,37 @@
+
+{% extends 'temp/home_usr.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <center>
+    <h2 class="cycle_taital">Booking status</h2>
+        <table border="1" class="table table-striped ">
+            <tr style="background-color: #274d5a;color: #FFFFFF">
+                <th>Booking id</th>
+                <th>model</th>
+                <th>shop</th>
+                <th>date</th>
+                <th>time</th>
+                <th>status</th>
+            </tr>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.booking_id }}</td>
+                <td>{{ i.cycle.model }}</td>
+                <td>{{ i.cycle.render.shop_name }}</td>
+                <td>{{ i.date }}</td>
+                <td>{{ i.time }}</td>
+                <td>{{ i.status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

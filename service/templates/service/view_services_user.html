@@ -1,0 +1,33 @@
+
+{% extends 'temp/home_usr.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <center>
+    <h2 class="cycle_taital">Services </h2>
+        <table border="1" class="table table-striped ">
+            <tr style="background-color: #274d5a;color: #FFFFFF">
+                <th>services</th>
+                <th>shop</th>
+                <th>charge</th>
+                <th>phone</th>
+            </tr>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.service }}</td>
+                <td>{{ i.render.shop_name }}</td>
+                <td>{{ i.charge }}</td>
+                <td>{{ i.render.phone }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

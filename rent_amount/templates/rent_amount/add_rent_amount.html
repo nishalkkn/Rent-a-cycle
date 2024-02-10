@@ -1,0 +1,46 @@
+{% extends 'temp/home_shop.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add rent amount</title>
+</head>
+<body>
+    <center>
+        <h2 class="cycle_taital">Rend amount</h2>
+        <form method="post">
+            {% csrf_token %}
+            <table style="height: 200px;width: 450px">
+{#                <tr>#}
+{#                    <td>booking id</td>#}
+{#                    <td><select name="bk_id" id="">#}
+{#                        <option value="select"></option>#}
+{#                        <option value=""></option>#}
+{#                    </select></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td>Starting point</td>#}
+{#                    <td><input type="text" name="st_point" required></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td>Ending point</td>#}
+{#                    <td><input type="text" name="end_point" required></td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td>distance</td>#}
+{#                    <td><input type="text" name="distance" required></td>#}
+{#                </tr>#}
+                <tr>
+                    <td>amount</td>
+                    <td><input type="text" name="amount" required></td>
+                </tr>
+            </table>
+            <button class="btn">Send</button>
+        </form>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'temp/home_admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent amount</title>
+</head>
+<body>
+    <center>
+       <h2 class="cycle_taital">Rent amount</h2>
+        <table border="1" class="table table-striped">
+            <tr style="background-color: #274d5a;color: #FFFFFF">
+                <th>Booking id</th>
+                <th>user</th>
+                <th>distance</th>
+                <th>amount</th>
+            </tr>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.distance_tracking.booking_id }}</td>
+                <td>{{ i.distance_tracking.booking.user.name }}</td>
+                <td>{{ i.distance_tracking.distance }}</td>
+                <td>{{ i.amount }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

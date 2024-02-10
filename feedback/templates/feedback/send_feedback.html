@@ -1,0 +1,36 @@
+{% extends 'temp/home_usr.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+<body>
+    <center>
+        <h2 class="cycle_taital">Feedback</h2>
+        <form method="post">
+            {% csrf_token %}
+            <table style="height: 200px;width: 450px">
+                <tr>
+                    <td>shop</td>
+                    <td><select name="shop" id="" required>
+                        <option value="select" disabled selected>Select</option>
+                        {% for i in b %}
+                        <option value="{{ i.shop_id }}">{{ i.shop_name }}</option>
+                        {% endfor %}
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Feedback</td>
+                    <td><textarea name="feedback" id="" cols="30" rows="7" maxlength="44"></textarea></td>
+                </tr>
+            </table>
+            <button class="btn">Send</button>
+        </form>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

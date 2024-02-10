@@ -1,0 +1,46 @@
+{% extends 'temp/home_usr.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>distance travelled</title>
+</head>
+<body>
+    <center>
+       <h2 class="cycle_taital">Distance travelled</h2>
+        <form method="post">
+            {% csrf_token %}
+            <table style="height: 200px;width: 400px">
+                <tr>
+                    <td>Booking id</td>
+                    <td><select name="booking_id">
+                        <option disabled selected>Select</option>
+                        {% for i in a %}
+                        <option value="{{ i.booking_id }}">{{ i.booking_id }}</option>
+                        {% endfor %}
+                    </select></td>
+                </tr>
+
+                <tr>
+                    <td>Start point</td>
+                    <td><input type="text" name="st_point" required></td>
+                </tr>
+                <tr>
+                    <td>End point</td>
+                    <td><input type="text" name="end_point" required></td>
+                </tr>
+                <tr>
+                    <td>Distance travelled</td>
+                    <td><input type="number" name="distance" required ></td>
+                </tr>
+            </table>
+        <br>
+            <button class="btn">Send</button>
+        </form>
+    </center>
+    
+</body>
+</html>
+{% endblock %}

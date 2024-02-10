@@ -1,0 +1,37 @@
+
+{% extends 'temp/home_usr.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <center>
+    <h2 class="cycle_taital">Rent amount</h2>
+        <table border="1" class="table table-striped ">
+            <tr style="background-color: #274d5a;color: #FFFFFF">
+                <th>model</th>
+                <th>distance</th>
+                <th>date</th>
+                <th>time</th>
+                <th>amount</th>
+                <th></th>
+            </tr>
+            {% for i in a %}
+            <tr>
+                <td>{{ i.distance_tracking.booking.cycle.model }} </td>
+                <td>{{ i.distance_tracking.distance}} km</td>
+                <td>{{ i.distance_tracking.booking.date }}</td>
+                <td>{{ i.distance_tracking.booking.time }}</td>
+                <td>{{ i.amount }}</td>
+                <td><a href="/payment/send_payment/{{ i.rent_amount_id }}">Pay</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+    
+</body>
+</html>
+{% endblock %}
